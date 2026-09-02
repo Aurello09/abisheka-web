@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Service;
+
+class HomeController extends Controller
+{
+    public function index()
+    {
+        $services = Service::where('is_active', true)->get();
+
+        return view('home.index', compact('services'));
+    }
+
+    public function about()
+    {
+        return view('pages.about');
+    }
+
+    public function contact()
+    {
+        return view('pages.contact');
+    }
+}

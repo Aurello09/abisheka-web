@@ -28,7 +28,9 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
             <a href="{{ route('home') }}" class="flex items-center gap-2 font-bold text-lg">
-                <span class="w-9 h-9 rounded bg-abs-red text-white flex items-center justify-center">ABS</span>
+                <img src="{{ asset('images/logo abisheka.jpg') }}"
+                     alt="Abisheka Bangun Sarana"
+                     class="w-9 h-9 rounded object-contain">
                 <span class="hidden sm:block">Abisheka Bangun Sarana</span>
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
@@ -69,7 +71,12 @@
         <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
                 <div class="flex items-center gap-2 text-white font-bold text-lg mb-3">
-                    <span class="w-9 h-9 rounded bg-abs-red text-white flex items-center justify-center">ABS</span>
+                        <span class="w-14 h-14 rounded bg-white flex items-center justify-center overflow-hidden">
+                            <img src="{{ asset('images/logo abisheka.jpg') }}"
+                                 alt="Logo Abisheka Bangun Sarana"
+                                 class="w-full h-full object-contain">
+                        </span>
+                     </span>
                     Abisheka Bangun Sarana
                 </div>
                 <p class="text-sm text-gray-400">Penyedia jasa outsourcing dan kontraktor terpercaya, bagian dari DPA Group — Holding Company of Universitas Airlangga.</p>

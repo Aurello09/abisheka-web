@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'PT Abisheka Bangun Sarana')</title>
     <meta name="description" content="@yield('meta_description', 'PT Abisheka Bangun Sarana - Penyedia jasa outsourcing dan kontraktor: perawatan gedung, pengadaan barang, keamanan, kebersihan, dan lainnya.')">
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700,800" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,24 +24,26 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 text-abs-dark antialiased">
+<body class="bg-[#f6f7f5] text-abs-dark antialiased" style="font-family: 'Plus Jakarta Sans', sans-serif;">
 
     {{-- NAVBAR --}}
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+    <header class="bg-white/95 backdrop-blur sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-[76px]">
             <a href="{{ route('home') }}" class="flex items-center gap-2 font-bold text-lg">
-                <span class="w-9 h-9 rounded bg-abs-red text-white flex items-center justify-center">ABS</span>
+                <span class="w-12 h-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center overflow-hidden shadow-sm">
+                    <img src="{{ asset('images/logo abisheka.jpg') }}" alt="Logo Abisheka Bangun Sarana" class="w-full h-full object-contain">
+                </span>
                 <span class="hidden sm:block">Abisheka Bangun Sarana</span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+            <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-gray-600">
                 <a href="{{ route('home') }}" class="hover:text-abs-red transition">Beranda</a>
-                <a href="{{ route('services.index') }}" class="hover:text-abs-red transition">Layanan</a>
+                <a href="{{ route('services.index') }}" class="text-abs-red transition">Layanan</a>
                 <a href="{{ route('about') }}" class="hover:text-abs-red transition">Tentang Kami</a>
                 <a href="{{ route('contact') }}" class="hover:text-abs-red transition">Kontak</a>
             </nav>
             <a href="https://wa.me/{{ config('services.whatsapp.number', '6282233117485') }}"
                target="_blank"
-               class="hidden sm:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition">
+               class="hidden sm:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow-sm shadow-green-600/20">
                 Hubungi via WA
             </a>
             {{-- Mobile menu toggle --}}
@@ -69,7 +73,9 @@
         <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
                 <div class="flex items-center gap-2 text-white font-bold text-lg mb-3">
-                    <span class="w-9 h-9 rounded bg-abs-red text-white flex items-center justify-center">ABS</span>
+                    <span class="w-12 h-12 rounded-xl bg-white flex items-center justify-center overflow-hidden">
+                        <img src="{{ asset('images/logo abisheka.jpg') }}" alt="Logo Abisheka Bangun Sarana" class="w-full h-full object-contain">
+                    </span>
                     Abisheka Bangun Sarana
                 </div>
                 <p class="text-sm text-gray-400">Penyedia jasa outsourcing dan kontraktor terpercaya, bagian dari DPA Group — Holding Company of Universitas Airlangga.</p>

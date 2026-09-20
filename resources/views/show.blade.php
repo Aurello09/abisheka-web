@@ -8,9 +8,15 @@
         <a href="{{ route('services.index') }}" class="text-sm text-gray-500 hover:text-abs-red mb-6 inline-block">&larr; Kembali ke semua layanan</a>
 
         <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-            <div class="w-14 h-14 rounded-lg bg-abs-red/10 text-abs-red flex items-center justify-center font-bold text-xl mb-6">
-                {{ substr($service->name, 0, 1) }}
-            </div>
+            @if ($service->image)
+                <img src="{{ asset('images/' . $service->image) }}"
+                     alt="{{ $service->name }}"
+                     class="w-full h-64 rounded-xl object-cover mb-6">
+            @else
+                <div class="w-14 h-14 rounded-lg bg-abs-red/10 text-abs-red flex items-center justify-center font-bold text-xl mb-6">
+                    {{ substr($service->name, 0, 1) }}
+                </div>
+            @endif
 
             <h1 class="text-2xl md:text-3xl font-bold mb-3">{{ $service->name }}</h1>
             <p class="text-gray-500 mb-6">{{ $service->short_description }}</p>

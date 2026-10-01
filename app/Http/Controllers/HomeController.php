@@ -15,11 +15,11 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('pages.about');
+        return view('about');
     }
 
     public function contact()
     {
-        return view('pages.contact');
+        return view('contact');
     }
 }

@@ -10,7 +10,7 @@ class ServiceController extends Controller
     {
         $services = Service::where('is_active', true)->get();
 
-        return view('index', compact('services'));
+        return view('services.index', compact('services'));
     }
 
     /**
@@ -18,6 +18,6 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        return view('show', compact('service'));
+        return view('services.show', compact('service'));
     }
 }

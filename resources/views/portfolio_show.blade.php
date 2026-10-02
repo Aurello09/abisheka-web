@@ -1,11 +1,11 @@
 @extends('layouts.frontend')
-@section('title', $portfolio->title . ' – Portofolio PT. Abisheka Bangun Sarana')
+@section('title', $portfolio->title . ' - Portofolio PT. Abisheka Bangun Sarana')
 @section('content')
 
 <x-inner-hero
-    subtitle="{{ $portfolio->category ?? 'PORTOFOLIO' }}"
-    title="{{ $portfolio->title }}"
-    description="{{ $portfolio->client_name ? 'Proyek untuk '.$portfolio->client_name : 'Proyek PT. Abisheka Bangun Sarana' }}"
+    :subtitle="$portfolio->category ?? 'PORTOFOLIO'"
+    :title="$portfolio->title"
+    :description="$portfolio->client_name ? 'Proyek untuk '.$portfolio->client_name : 'Proyek PT. Abisheka Bangun Sarana'"
 />
 
 <section class="max-w-5xl mx-auto px-4 py-14">

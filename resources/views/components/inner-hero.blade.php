@@ -1,4 +1,4 @@
-@props(['subtitle', 'title', 'description'])
+@props(['subtitle' => '', 'title' => '', 'description' => ''])
 <section class="relative bg-abs-dark text-white overflow-hidden border-b-[4px] border-abs-red">
     {{-- Rich gradient background --}}
     <div class="absolute inset-0 bg-gradient-to-br from-[#540d16] via-[#161616] to-[#3b0a10]"></div>

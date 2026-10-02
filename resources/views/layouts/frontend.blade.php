@@ -63,7 +63,7 @@
             <a href="{{ route('home') }}" class="flex items-center gap-3 group flex-shrink-0">
                 <img src="{{ asset('images/logo_abhiseka_final.png') }}" alt="Logo Abisheka Bangun Sarana" class="w-10 h-10 object-contain transition group-hover:scale-105">
                 <div class="hidden sm:flex items-center gap-1.5 whitespace-nowrap mt-0.5">
-                    <span class="font-extrabold text-abs-dark text-[15px] md:text-base tracking-wide">PT. ABHISEKA</span>
+                    <span class="font-extrabold text-abs-dark text-[15px] md:text-base tracking-wide">PT. ABISHEKA</span>
                     <span class="text-abs-red font-extrabold text-[15px] md:text-base tracking-wide">BANGUN SARANA</span>
                 </div>
             </a>

@@ -18,6 +18,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
+        abort_if(!$service->is_active, 404);
         return view('services.show', compact('service'));
     }
 }

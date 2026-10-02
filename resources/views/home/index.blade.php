@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
-@section('title', 'Beranda — PT Abisheka Bangun Sarana')
+@section('title', 'Beranda — PT. Abisheka Bangun Sarana')
 
 @section('content')
 
@@ -17,7 +17,7 @@
             <div class="relative">
                 <div class="inline-flex items-center gap-2 bg-white/15 border border-white/20 rounded-full px-4 py-1.5 mb-8">
                     <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-white/90">PT Abisheka Bangun Sarana</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-white/90">PT. Abisheka Bangun Sarana</span>
                 </div>
                 <h1 class="max-w-xl text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.05] tracking-tight mb-6">
                     Partner operasional yang <span class="text-[#eab0a8]">siap bekerja.</span>
@@ -143,7 +143,75 @@
     </div>
 </section>
 
+{{-- ═══════════════════════════ KLIEN & MITRA ═══════════════════════════ --}}
+@if($clients->count() > 0)
+<section class="border-t border-gray-100 py-16 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center gap-3 mb-10 justify-center">
+            <span class="h-px w-10 bg-abs-red"></span>
+            <p class="text-xs font-bold uppercase tracking-[0.25em] text-abs-red">Klien & Mitra Kami</p>
+            <span class="h-px w-10 bg-abs-red"></span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 items-center">
+            @foreach($clients as $client)
+                <div class="group flex items-center justify-center transition duration-300">
+                    @if($client->logo)
+                        <img src="{{ asset('images/'.$client->logo) }}"
+                             alt="{{ $client->name }}"
+                             class="h-10 object-contain max-w-[140px] grayscale group-hover:grayscale-0 opacity-50 group-hover:opacity-100 transition duration-300">
+                    @else
+                        <div class="px-5 py-3 border border-gray-200 rounded-xl text-gray-400 hover:border-abs-red hover:text-abs-dark transition-all duration-300">
+                            <span class="font-semibold text-sm whitespace-nowrap">{{ $client->name }}</span>
+                        </div>
+                    @endif
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
+
+{{-- ═══════════════════════════ TESTIMONI ═══════════════════════════ --}}
+@if($testimonials->count() > 0)
+<section class="bg-gray-50 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center gap-2 mb-3 justify-center">
+            <span class="h-px w-8 bg-abs-red"></span>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-abs-red">Testimoni</p>
+            <span class="h-px w-8 bg-abs-red"></span>
+        </div>
+        <h2 class="text-3xl md:text-[2.25rem] font-extrabold text-abs-dark text-center mb-10">Apa Kata Mereka?</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach($testimonials as $testi)
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col gap-4">
+                    <svg class="w-8 h-8 text-abs-red/30" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="text-gray-600 italic text-sm leading-7 flex-1">"{{ $testi->message }}"</p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                        @if($testi->avatar)
+                            <img src="{{ asset('images/'.$testi->avatar) }}" alt="{{ $testi->client_name }}" class="w-10 h-10 rounded-full object-cover">
+                        @else
+                            <div class="w-10 h-10 bg-gradient-to-br from-abs-red to-abs-dark rounded-full flex items-center justify-center font-bold text-white text-sm">
+                                {{ substr($testi->client_name, 0, 1) }}
+                            </div>
+                        @endif
+                        <div>
+                            <h4 class="font-bold text-sm text-abs-dark">{{ $testi->client_name }}</h4>
+                            @if($testi->company)
+                                <span class="text-xs text-gray-500">{{ $testi->company }}</span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
 {{-- ═══════════════════════════ CTA BANNER ═══════════════════════════ --}}
+
+
 <section class="max-w-6xl mx-auto px-4 pb-10 mt-16">
     <div class="relative bg-gradient-to-br from-abs-dark to-[#3b1216] rounded-[2rem] p-10 sm:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-2xl overflow-hidden">
         
@@ -170,3 +238,7 @@
 </section>
 
 @endsection
+
+
+
+

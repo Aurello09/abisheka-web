@@ -38,6 +38,13 @@ return [
             'report' => false,
         ],
 
+        'public_images' => [
+            'driver' => 'local',
+            'root' => public_path('images'),
+            'url' => '/images',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -78,3 +85,6 @@ return [
     ],
 
 ];
+
+
+

@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
-@section('title', $service->name . ' — PT Abisheka Bangun Sarana')
+@section('title', $service->name . ' — PT. Abisheka Bangun Sarana')
 @section('meta_description', $service->short_description)
 
 @section('content')

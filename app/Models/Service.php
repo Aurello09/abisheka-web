@@ -36,7 +36,7 @@ class Service extends Model
      */
     public function whatsappLink(): string
     {
-        $phone = config('services.whatsapp.number', '6282233117485');
+        $phone = \App\Models\SiteSetting::current()->clean_whatsapp ?: config('services.whatsapp.number', '6282233117485');
         $message = "Halo PT Abisheka Bangun Sarana, saya ingin memesan/menanyakan layanan *{$this->name}*.";
 
         return 'https://wa.me/' . $phone . '?text=' . urlencode($message);

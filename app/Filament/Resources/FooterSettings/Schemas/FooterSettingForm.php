@@ -77,8 +77,8 @@ class FooterSettingForm
                         ->helperText('Paragraf penjelasan profil perusahaan di bawah logo footer.'),
                 ]),
 
-            Section::make('Media Sosial & Legalitas')
-                ->description('Link media sosial dan nomor perizinan resmi perusahaan di footer bawah.')
+            Section::make('Media Sosial')
+                ->description('Link akun media sosial perusahaan.')
                 ->schema([
                     Grid::make(2)->schema([
                         TextInput::make('instagram_url')
@@ -88,14 +88,6 @@ class FooterSettingForm
                         TextInput::make('linkedin_url')
                             ->label('Link LinkedIn')
                             ->placeholder('https://linkedin.com/company/...'),
-
-                        TextInput::make('nib')
-                            ->label('Nomor Induk Berusaha (NIB)')
-                            ->placeholder('1214000100878'),
-
-                        TextInput::make('npwp')
-                            ->label('NPWP Badan')
-                            ->placeholder('96.903.975.9-607.000'),
                     ]),
                 ]),
         ]);

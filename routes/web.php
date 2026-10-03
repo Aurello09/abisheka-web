@@ -15,6 +15,7 @@ Route::get('/artikel', [HomeController::class, 'articles'])->name('articles');
 Route::get('/artikel/{article:slug}', [HomeController::class, 'articleShow'])->name('articles.show');
 
 Route::get('/kontak', [HomeController::class, 'contact'])->name('contact');
+Route::get('/kebijakan-privasi', [HomeController::class, 'privacy'])->name('privacy');
 
 // Fallback redirect for old admin or dashboard links
 Route::redirect('/dashboard', '/admin');

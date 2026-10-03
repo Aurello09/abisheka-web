@@ -23,6 +23,10 @@ class HomeController extends Controller
     {
         return view('contact');
     }
+    public function privacy()
+    {
+        return view('privacy');
+    }
     public function portfolio()
     {
         $portfolios = Portfolio::where('is_active', true)->orderBy('completion_date', 'desc')->get();

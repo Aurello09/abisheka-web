@@ -185,17 +185,11 @@
 
         {{-- Bottom bar --}}
         <div class="border-t border-gray-800">
-            <div class="max-w-6xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
+            <div class="max-w-6xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
                 <span>&copy; {{ date('Y') }} {{ $siteSetting->copyright_text ?: 'PT. Abisheka Bangun Sarana. Seluruh hak cipta dilindungi.' }}</span>
-                <div class="flex flex-wrap items-center justify-center gap-3">
-                    <span>NIB: {{ $siteSetting->nib ?: '1214000100878' }} &middot; NPWP: {{ $siteSetting->npwp ?: '96.903.975.9-607.000' }}</span>
-                    @if($siteSetting->holding_name)
-                    <a href="{{ $siteSetting->holding_url ?: 'https://dpacorp.id/' }}" target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-1.5 bg-gray-800 hover:bg-abs-red/80 text-gray-400 hover:text-white px-3 py-1 rounded-full transition text-[11px] font-semibold">
-                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                        Part of {{ $siteSetting->holding_name }}
-                    </a>
-                    @endif
+                <div class="flex items-center gap-6 text-xs text-gray-400">
+                    <a href="{{ route('contact') }}" class="hover:text-white transition">Hubungi Kami</a>
+                    <a href="{{ route('privacy') }}" class="hover:text-white transition">Kebijakan Privasi</a>
                 </div>
             </div>
         </div>
